@@ -407,10 +407,8 @@ begin
 
 rescue SignalException, Interrupt, SystemExit
 	puts "\e[?25h\e[0m"
-
 rescue Errno::ENOTTY
 	puts "Uh Oh! No terminal found. Please Run this in a terminal.\nOptionally run #{$0} --tty? to check for a TTY".colourize
-
 rescue Exception
 	puts "Uh oh! An Error Occurred...\n".colourize +
 		"#{$!.to_s}: ".colourize + $-n +
